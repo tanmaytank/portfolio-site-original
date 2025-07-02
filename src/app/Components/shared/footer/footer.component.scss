@@ -1,0 +1,22 @@
+/* footer.component.scss */
+
+.footer {
+    background: #101015;
+    color: #ccc;
+    font-size: 14px;
+  
+    .sitename {
+      color: #fff;
+      font-weight: 600;
+    }
+  
+    a {
+      color: #e84545;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  

@@ -1,0 +1,223 @@
+/* Fonts */
+:root {
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+    --background-color: #ffffff;
+    /* Background color for the entire website, including individual sections */
+    --default-color: #272829;
+    /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #050d18;
+    /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #149ddd;
+    /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #ffffff;
+    /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff;
+    /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+    --nav-color: #a8a9b4;
+    /* The default color of the main navmenu links */
+    --nav-hover-color: #ffffff;
+    /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: #040b14;
+    /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: #040b14;
+    /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: #a8a9b4;
+    /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: #ffffff;
+    /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+    --background-color: #f4fafd;
+    --surface-color: #ffffff;
+}
+
+.dark-background {
+    --background-color: #040b14;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #151f2b;
+    --contrast-color: #ffffff;
+}
+
+
+
+body {
+    background: #0c0c14;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+a,
+h1,
+h2,
+h3,
+h4 {
+    color: #fff;
+}
+
+.navmenu {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin: 10px 0;
+
+            a {
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                transition: all 0.3s ease-in-out;
+
+                i {
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    background-color: rgba(20, 157, 221, 0.1); // subtle bg effect
+                    color: #149ddd;
+                }
+
+                &.active {
+                    background-color: rgba(20, 157, 221, 0.15);
+                    border-left: 4px solid #149ddd;
+                    color: #149ddd;
+                }
+            }
+        }
+    }
+}
+
+.header .social-links {
+    margin: 0 0 20px 0;
+}
+
+.header .profile-img img {
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+    border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+// .header {
+//   color: var(--default-color);
+//   background-color: var(--background-color);
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   padding: 0 15px;
+//   width: 300px;
+//   transition: all ease-in-out 0.3s;
+//   overflow-y: auto;
+//   z-index: 997;
+//   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+// }
+
+// .header .profile-img img {
+//   margin: 15px auto;
+//   display: block;
+//   width: 120px;
+//   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+// }
+
+// .header .logo {
+//   line-height: 1;
+//   margin-bottom: 15px;
+// }
+
+// .header .logo img {
+//   max-height: 32px;
+//   margin-right: 8px;
+// }
+
+// .header .logo h1 {
+//   font-size: 24px;
+//   margin: 0;
+//   font-weight: 700;
+//   color: var(--heading-color);
+// }
+
+.header .social-links {
+    margin: 0 0 20px 0;
+}
+
+.header .social-links a {
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, #272829, transparent 90%);
+    color: #ffffff;
+    margin: 0 2px;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.header .social-links a:hover {
+
+    &:hover {
+        background-color: rgba(20, 157, 221, 0.1); // subtle bg effect
+        color: #149ddd;
+    }
+}
+// @media (min-width: 1200px) {
+
+//   .header~main,
+//   .header~#footer {
+//     margin-left: 300px;
+//   }
+// }
+
+// @media (max-width: 1199px) {
+//   .header {
+//     left: -100%;
+//   }
+// }
+
+// .header.header-show {
+//   left: 0;
+// }
+
+// .header .header-toggle {
+//   color: var(--contrast-color);
+//   background-color: var(--accent-color);
+//   font-size: 22px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 40px;
+// //   height: 40px;
+//   border-radius: 50%;
+//   cursor: pointer;
+//   position: fixed;
+//   top: 15px;
+//   right: 15px;
+//   z-index: 9999;
+//   transition: background-color 0.3s;
+// }
+
+// .header .header-toggle:hover {
+//   color: var(--contrast-color);
+//   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+// }

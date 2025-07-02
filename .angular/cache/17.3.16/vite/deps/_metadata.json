@@ -1,0 +1,70 @@
+{
+  "hash": "95e31d9f",
+  "configHash": "fcf08644",
+  "lockfileHash": "f31ddfe6",
+  "browserHash": "7cd2b145",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "905a79c1",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "8070f889",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "a998a57a",
+      "needsInterop": false
+    },
+    "typed.js": {
+      "src": "../../../../../node_modules/typed.js/dist/typed.module.js",
+      "file": "typed__js.js",
+      "fileHash": "a6b26580",
+      "needsInterop": false
+    },
+    "aos": {
+      "src": "../../../../../node_modules/aos/dist/aos.js",
+      "file": "aos.js",
+      "fileHash": "344ab1ac",
+      "needsInterop": true
+    },
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "cbe54725",
+      "needsInterop": false
+    },
+    "emailjs-com": {
+      "src": "../../../../../node_modules/emailjs-com/es/index.js",
+      "file": "emailjs-com.js",
+      "fileHash": "0d99ea3b",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "22dbfd06",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-NNV6FKIO": {
+      "file": "chunk-NNV6FKIO.js"
+    },
+    "chunk-F6HFB4LX": {
+      "file": "chunk-F6HFB4LX.js"
+    },
+    "chunk-AJKYB2PO": {
+      "file": "chunk-AJKYB2PO.js"
+    },
+    "chunk-3OV72XIM": {
+      "file": "chunk-3OV72XIM.js"
+    }
+  }
+}

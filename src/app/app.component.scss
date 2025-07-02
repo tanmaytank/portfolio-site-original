@@ -1,0 +1,66 @@
+// .scroll-top {
+//     position: fixed;
+//     right: 15px;
+//     bottom: 15px;
+//     z-index: 999;
+//     background: var(--accent-color);
+//     color: #fff;
+//     border-radius: 50%;
+//     width: 40px;
+//     height: 40px;
+//     border: none;
+//     font-size: 24px;
+//     display: none;
+//     opacity: 0.8;
+//     transition: all 0.4s;
+// }
+
+// .scroll-top:hover {
+//     opacity: 1;
+// }
+
+// .scroll-top.d-flex {
+//     display: flex !important;
+// }
+
+/* Wrapper for the entire layout */
+.layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar settings */
+.sidebar {
+    width: 276px;
+    /* Fixed width */
+    background-color: #1c1e21;
+    /* Optional sidebar color */
+    flex-shrink: 0;
+    /* Prevents shrinking */
+    z-index: 100;
+}
+
+/* Main content adjusts based on sidebar */
+.main-content {
+    flex-grow: 1;
+    // padding: 20px;
+    background-color: #f8f9fa;
+    /* Light background for contrast */
+    overflow-x: hidden;
+}
+
+
+@media (max-width: 768px) {
+    .layout-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
