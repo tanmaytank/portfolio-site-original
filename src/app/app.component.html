@@ -20,11 +20,15 @@
 
   <!-- Main Content Area -->
   <main class="main-content">
-    <button class="scroll-top d-flex align-items-center justify-content-center" *ngIf="showScrollButton"
+    <!-- <button class="scroll-top d-flex align-items-center justify-content-center" *ngIf="showScrollButton"
       (click)="scrollToTop()">
       <i class="bi bi-arrow-up-short"></i>
-    </button>
+    </button> -->
     <router-outlet></router-outlet>
     <app-footer></app-footer>
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+      (onclick)="scrollToTop()">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
   </main>
 </div>

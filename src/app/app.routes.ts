@@ -9,5 +9,9 @@ export const routes: Routes = [
     { path: '', component: StarterComponent },
     { path: '', component: PortfolioDetailsComponent },
     { path: '', component: ContactComponent },
-    { path: '**', redirectTo: '' }
+    {
+        path: 'portfolio-details/:id',
+        loadComponent: () => import('../app/Components/portfolio-details/portfolio-details.component').then(m => m.PortfolioDetailsComponent)
+    },
+    { path: '**', redirectTo: '' },
 ];

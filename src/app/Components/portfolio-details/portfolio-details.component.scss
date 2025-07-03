@@ -1,0 +1,37 @@
+.shadow-box {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.shadow-box-image {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ffffff; // Optional: better contrast
+  padding: 20px; // Optional: spacing around image
+  border-radius: 8px; // Optional: for rounded edges
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 500px; // Adjust to your design
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.portfolio-description {
+  max-width: 100%;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}

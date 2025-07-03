@@ -1,1 +1,96 @@
-<p>portfolio-details works!</p>
+<div class="page-title dark-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a routerLink="/">Home</a></li>
+                <li class="current">Portfolio Details</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section id="portfolio-details" class="portfolio-details section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- <div class="row gy-4">
+            <div class="col-lg-8">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Project information</h3>
+                    <ul>
+                        <li><strong>Category</strong>: Web design</li>
+                        <li><strong>Client</strong>: ASU Company</li>
+                        <li><strong>Project date</strong>: 01 March, 2020</li>
+                        <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                    </ul>
+                </div>
+                <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                    <h2>Exercitationem repudiandae officiis neque suscipit</h2>
+                    <p>
+                        Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia
+                        quia...
+                    </p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row gy-4 equal-height">
+            <!-- Left Image Swiper -->
+            <div class="col-lg-8">
+                <div class="swiper shadow-box-image">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let image of portfolioItem?.previewImages">
+                            <img [src]="image.src" [alt]="image.alt || portfolioItem?.title" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="col-lg-4">
+                <div class="shadow-box">
+                    <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Project information</h3>
+                        <ul>
+                            <li><strong>Category</strong>: {{ portfolioItem?.category }}</li>
+                            <li><strong>Domain</strong>: {{ portfolioItem?.projectDomain }}</li>
+                            <li>
+                                <strong>Project URL</strong>:
+                                <em><a [href]="portfolioItem?.projectUrl" target="_blank">{{ portfolioItem?.projectUrl
+                                        }}</a></em>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><strong>Tech Used</strong>: {{portfolioItem?.techUsed?.join(", ")}} </li>
+                        </ul>
+                    </div>
+
+                    <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                        <h2>{{ portfolioItem?.title }}</h2>
+                        <p>{{ portfolioItem?.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>

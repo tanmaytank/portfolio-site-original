@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = `Tanmays","s portfolio`;
-  showScrollButton = true;
+  showScrollButton = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

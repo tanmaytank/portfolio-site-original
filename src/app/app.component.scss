@@ -64,3 +64,37 @@
         padding: 10px;
     }
 }
+
+// .scroll-top {
+//     position: fixed;
+//     right: 20px;
+//     bottom: 30px;
+//     z-index: 999;
+//     width: 40px;
+//     height: 40px;
+//     background: #0d6efd;
+//     color: #fff;
+//     border-radius: 50%;
+//     text-align: center;
+//     font-size: 24px;
+//     display: none;
+//     cursor: pointer;
+//     transition: all 0.4s;
+// }
+
+// .scroll-top.show {
+//     display: flex !important;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .scroll-top:hover {
+//   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+//   color: var(--contrast-color);
+// }
+
+// .scroll-top.active {
+//   visibility: visible;
+//   opacity: 1;
+//   bottom: 15px;
+// }
