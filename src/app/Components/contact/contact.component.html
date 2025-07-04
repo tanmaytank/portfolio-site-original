@@ -43,7 +43,7 @@
             <!-- End Contact Info -->
 
             <!-- Contact Form -->
-            <div class="col-lg-7">
+            <!-- <div class="col-lg-7">
                 <form #contactForm="ngForm" (ngSubmit)="sendEmail()" method="POST" class="php-email-form">
                     <div class="row gy-4">
 
@@ -71,19 +71,60 @@
                                 class="form-control" required></textarea>
                         </div>
 
-                        <!-- Optional: Hidden fields to configure behavior -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_autoresponse"
-                            value="Thank you for contacting me. I will get back to you shortly.">
-
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn btn-primary px-4 py-2">Send Message</button>
                         </div>
 
                     </div>
                 </form>
+            </div> -->
+
+            <div class="col-lg-7">
+                <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="php-email-form">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <label for="name-field" class="pb-2">
+                                Your Name
+                                <span *ngIf="isFieldInvalid('name')" class="required-asterisk">*</span>
+                            </label>
+                            <input type="text" id="name-field" class="form-control" formControlName="name">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email-field" class="pb-2">
+                                Your Email
+                                <span *ngIf="isFieldInvalid('email')" class="required-asterisk">*</span>
+                            </label>
+                            <input type="email" id="email-field" class="form-control" formControlName="email">
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="subject-field" class="pb-2">
+                                Subject
+                                <span *ngIf="isFieldInvalid('subject')" class="required-asterisk">*</span>
+                            </label>
+                            <input type="text" id="subject-field" class="form-control" formControlName="subject">
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="message-field" class="pb-2">
+                                Message
+                                <span *ngIf="isFieldInvalid('message')" class="required-asterisk">*</span>
+                            </label>
+                            <textarea id="message-field" rows="10" class="form-control"
+                                formControlName="message"></textarea>
+                        </div>
+
+
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary px-4 py-2" [disabled]="contactForm.invalid">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
+
             <!-- End Form -->
 
         </div>
