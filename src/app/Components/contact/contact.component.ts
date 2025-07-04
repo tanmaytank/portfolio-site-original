@@ -30,10 +30,10 @@ export class ContactComponent {
     const formValue = this.contactForm.value;
     const email = (formValue.email ?? '').trim();
 
-    if (this.isTemporaryEmail(email)) {
-      this._notification.showInfo('Temporary email addresses are not allowed.');
-      return;
-    }
+    // if (this.isTemporaryEmail(email)) {
+    //   this._notification.showInfo('Temporary email addresses are not allowed.');
+    //   return;
+    // }
 
     const formattedDateTime = this.getFormattedDate();
 
