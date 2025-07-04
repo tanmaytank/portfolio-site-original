@@ -1,3 +1,14 @@
+::ng-deep .mat-warn {
+  background-color: #c62828;
+  color: #fff;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::ng-deep .mat-success {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
+::ng-deep .mat-error {
+  background-color: #d32f2f;
+  color: #fff;
+}
