@@ -1,32 +1,32 @@
 #hero {
-    background: url('../../../assets/img/hero-bg.jpg') center center no-repeat;
-    background-size: cover;
-    height: 40vh;
-    display: flex;
-    align-items: center;
+  background: url('../../../assets/img/pexels-timmossholder.jpg') center center no-repeat;
+  background-size: cover;
+  height: 40vh;
+  display: flex;
+  align-items: center;
 
-    .container {
-        text-align: left;
-        color: white;
+  .container {
+    text-align: left;
+    color: white;
 
-        h1 {
-            font-size: 48px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        p {
-            color: #fff;
-            font-size: 24px;
-        }
-
-        span {
-            color: #aaa;
-            color: #fff;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #149ddd;
-        }
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #fff;
     }
+
+    p {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    span {
+      color: #aaa;
+      color: #fff;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #149ddd;
+    }
+  }
 }
 
 .hero:before {

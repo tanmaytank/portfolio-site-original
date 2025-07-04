@@ -6,9 +6,9 @@ export const environment = {
   production: false,
 
   emailJS: {
-    publicKey: 'tJZuIQaL39ItCAf6r',
-    serviceID: 'service_l2ojo77',
-    templateID: 'template_si2une3'
+    publicKey: 'yKuGSymS4UAwsL4Bl',
+    serviceID: 'service_hcmeb9f',
+    templateID: 'template_blnlrpk'
   }
 };
 /*s
