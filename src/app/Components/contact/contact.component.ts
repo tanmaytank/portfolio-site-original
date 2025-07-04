@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
-import { forbiddenEmailDomainValidator } from '../Model/Validator';
+import { NotificationService } from '../service/notification.service';
 
 @Component({
   selector: 'app-contact',
@@ -17,7 +16,7 @@ export class ContactComponent {
 
   constructor(
     private _fb: FormBuilder,
-    private _snackBar: MatSnackBar
+    private _notification: NotificationService
   ) { }
 
   contactForm = this._fb.group({
@@ -27,17 +26,12 @@ export class ContactComponent {
     message: ['', Validators.required]
   });
 
-  isFieldInvalid(field: string): boolean {
-    const control = this.contactForm.get(field);
-    return (control?.invalid && control?.touched) ?? false;
-  }
-
   sendEmail() {
     const formValue = this.contactForm.value;
     const email = (formValue.email ?? '').trim();
 
     if (this.isTemporaryEmail(email)) {
-      this.showSnackBar('Temporary email addresses are not allowed.', 'warn');
+      this._notification.showInfo('Temporary email addresses are not allowed.');
       return;
     }
 
@@ -57,10 +51,12 @@ export class ContactComponent {
       templateParams,
       environment.emailJS.publicKey,
     ).then((result: EmailJSResponseStatus) => {
-      this.showSnackBar('Message sent successfully!', 'success');
-      this.contactForm.reset();
+      if (result.status === 200) {
+        this.contactForm.reset();
+        this._notification.showSuccess('Thank you for your message, I will get back to you as soon as possible.');
+      }
     }, (error) => {
-      this.showSnackBar('Message failed to send. Please try again.', 'error');
+      this._notification.showError('Message failed to send. Please try again.');
       console.error('FAILED...', error);
     });
   }
@@ -86,16 +82,23 @@ export class ContactComponent {
     return `${day}-${month}-${year}, ${hours}:${minutes} ${ampm}`;
   }
 
-  private showSnackBar(message: string, type: 'warn' | 'success' | 'error'): void {
-    const panelClassMap = {
-      warn: 'mat-warn',
-      success: 'mat-success',
-      error: 'mat-error'
-    };
+  isFieldInvalid(field: string): boolean {
+    const control = this.contactForm.get(field);
+    return (control?.invalid && control?.touched) ?? false;
+  }
 
-    this._snackBar.open(message, 'Close', {
-      duration: 4000,
-      panelClass: [panelClassMap[type]]
+  get ContactFormVaidate() {
+    return this.contactForm.controls;
+  }
+
+  private validateAllFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach((field) => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFields(control);
+      }
     });
   }
 

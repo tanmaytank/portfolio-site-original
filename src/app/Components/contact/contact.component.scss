@@ -1,5 +1,14 @@
 .required-asterisk {
-  color: red;
-  margin-left: 4px;
-  font-weight: bold;
+    color: red;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    font-size: 0.875rem;
+    color: #dc3545;
 }

@@ -85,36 +85,55 @@
                         <div class="col-md-6">
                             <label for="name-field" class="pb-2">
                                 Your Name
-                                <span *ngIf="isFieldInvalid('name')" class="required-asterisk">*</span>
+                                <span *ngIf="ContactFormVaidate.name.value == ''" class="text-danger ms-1">*</span>
                             </label>
-                            <input type="text" id="name-field" class="form-control" formControlName="name">
+                            <input type="text" id="name-field" class="form-control" formControlName="name"
+                                [ngClass]="{'is-invalid': isFieldInvalid('name')}" maxlength="50" />
+                            <div class="invalid-feedback"
+                                *ngIf="ContactFormVaidate.name.touched && ContactFormVaidate.name.errors?.['required']">
+                                Name is required.
+                            </div>
                         </div>
 
                         <div class="col-md-6">
                             <label for="email-field" class="pb-2">
                                 Your Email
-                                <span *ngIf="isFieldInvalid('email')" class="required-asterisk">*</span>
+                                <span *ngIf="ContactFormVaidate.email.value == ''" class="text-danger ms-1">*</span>
                             </label>
-                            <input type="email" id="email-field" class="form-control" formControlName="email">
+                            <input type="email" id="email-field" class="form-control" formControlName="email"
+                                [ngClass]="{'is-invalid': isFieldInvalid('email')}" maxlength="254" />
+                            <div class="invalid-feedback"
+                                *ngIf="ContactFormVaidate.email.touched && ContactFormVaidate.email.errors">
+                                <span *ngIf="ContactFormVaidate.email.errors['required']">Email is required.</span>
+                                <span *ngIf="ContactFormVaidate.email.errors['email']">Enter a valid email.</span>
+                            </div>
                         </div>
 
                         <div class="col-md-12">
                             <label for="subject-field" class="pb-2">
                                 Subject
-                                <span *ngIf="isFieldInvalid('subject')" class="required-asterisk">*</span>
+                                <span *ngIf="ContactFormVaidate.subject.value == ''" class="text-danger ms-1">*</span>
                             </label>
-                            <input type="text" id="subject-field" class="form-control" formControlName="subject">
+                            <input type="text" id="subject-field" class="form-control" formControlName="subject"
+                                [ngClass]="{'is-invalid': isFieldInvalid('subject')}" maxlength="100" />
+                            <div class="invalid-feedback"
+                                *ngIf="ContactFormVaidate.subject.touched && ContactFormVaidate.subject.errors?.['required']">
+                                Subject is required.
+                            </div>
                         </div>
 
                         <div class="col-md-12">
                             <label for="message-field" class="pb-2">
                                 Message
-                                <span *ngIf="isFieldInvalid('message')" class="required-asterisk">*</span>
+                                <span *ngIf="ContactFormVaidate.message.value == ''" class="text-danger ms-1">*</span>
                             </label>
-                            <textarea id="message-field" rows="10" class="form-control"
-                                formControlName="message"></textarea>
+                            <textarea id="message-field" rows="10" class="form-control" formControlName="message"
+                                [ngClass]="{'is-invalid': isFieldInvalid('message')}" maxlength="1000"></textarea>
+                            <div class="invalid-feedback"
+                                *ngIf="ContactFormVaidate.message.touched && ContactFormVaidate.message.errors?.['required']">
+                                Message is required.
+                            </div>
                         </div>
-
 
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn btn-primary px-4 py-2" [disabled]="contactForm.invalid">
@@ -124,9 +143,6 @@
                     </div>
                 </form>
             </div>
-
-            <!-- End Form -->
-
         </div>
     </div>
 </section>
